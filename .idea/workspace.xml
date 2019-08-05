@@ -2,57 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b55acb1e-4b7c-4bf1-8a7c-aecc34077992" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objConverter/ModelData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objConverter/OBJFileLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objConverter/Vertex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/textures/TerrainTexture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/textures/TerrainTexturePack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/ShaderProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/ShaderProgram.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/StaticShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/StaticShader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/TerrainShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/TerrainShader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/fragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/terrainFragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/terrainFragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/terrainVertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/terrainVertexShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/vertexShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/engineTester/MainGameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/engineTester/MainGameLoop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Light.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Light.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/models/RawModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/models/RawModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/models/TexturedModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/models/TexturedModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/DisplayManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/DisplayManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/EntityRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/EntityRenderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/Loader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/MasterRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/MasterRenderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/OBJloader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/OBJloader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/TerrainRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/TerrainRenderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/terrains/Terrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/terrains/Terrain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/textures/ModelTexture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/textures/ModelTexture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Maths.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Maths.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/bunny.obj" beforeDir="false" afterPath="$PROJECT_DIR$/res/bunny.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/exampleOBJ.obj" beforeDir="false" afterPath="$PROJECT_DIR$/res/exampleOBJ.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/fern.obj" beforeDir="false" afterPath="$PROJECT_DIR$/res/fern.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/grassModel.obj" beforeDir="false" afterPath="$PROJECT_DIR$/res/grassModel.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/lowPolyTree.obj" beforeDir="false" afterPath="$PROJECT_DIR$/res/lowPolyTree.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/res.zip" beforeDir="false" afterPath="$PROJECT_DIR$/res/res.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tree.obj" beforeDir="false" afterPath="$PROJECT_DIR$/res/tree.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/TerrainRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/TerrainRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/StaticShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/TerrainShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/TerrainShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/fragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/terrainFragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/terrainFragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/terrainVertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/terrainVertexShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/vertexShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/terrains/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/terrains/Terrain.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,15 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/shaders/TerrainShader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="55" selection-start-line="54" selection-start-column="5" selection-end-line="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shaders/ShaderProgram.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -98,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/engineTester/MainGameLoop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="69" column="53" lean-forward="true" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
+            <state relative-caret-position="219">
+              <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,10 +53,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/textures/ModelTexture.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+              <folding>
+                <element signature="e#491#492#0" expanded="true" />
+                <element signature="e#537#538#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/Camera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="897">
-              <caret line="71" column="36" lean-forward="true" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+            <state relative-caret-position="200">
+              <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+            <state relative-caret-position="102">
+              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/renderEngine/Loader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="26" column="53" lean-forward="true" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+              <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -232,10 +187,10 @@
         <option value="$PROJECT_DIR$/src/renderEngine/TerrainRenderer.java" />
         <option value="$PROJECT_DIR$/src/shaders/terrainFragmentShader.txt" />
         <option value="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" />
-        <option value="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" />
-        <option value="$PROJECT_DIR$/src/entities/Camera.java" />
         <option value="$PROJECT_DIR$/src/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/renderEngine/Loader.java" />
+        <option value="$PROJECT_DIR$/src/entities/Camera.java" />
+        <option value="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" />
       </list>
     </option>
   </component>
@@ -250,8 +205,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,6 +233,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,16 +314,17 @@
       <workItem from="1565008680909" duration="1564000" />
       <workItem from="1565010521065" duration="1637000" />
       <workItem from="1565012294506" duration="1480000" />
+      <workItem from="1565014304270" duration="890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54868000" />
+    <option name="totallyTimeSpent" value="55758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1652452" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16684435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -568,13 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/textures/ModelTexture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renderEngine/TerrainRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -608,10 +557,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderEngine/DisplayManager.java">
+    <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+        <state relative-caret-position="102">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -632,10 +581,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engineTester/MainGameLoop.java">
+    <entry file="file://$PROJECT_DIR$/src/renderEngine/Loader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="69" column="53" lean-forward="true" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
+        <state relative-caret-position="187">
+          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -644,28 +593,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="71" column="36" lean-forward="true" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+        <state relative-caret-position="200">
+          <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/textures/ModelTexture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        <state relative-caret-position="257">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <folding>
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renderEngine/DisplayManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderEngine/Loader.java">
+    <entry file="file://$PROJECT_DIR$/src/engineTester/MainGameLoop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="53" lean-forward="true" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+        <state relative-caret-position="219">
+          <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

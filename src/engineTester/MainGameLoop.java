@@ -62,6 +62,8 @@ public class MainGameLoop {
         TexturedModel playerModel = new TexturedModel(OBJloader.loadObjModel("person", loader),
                 new ModelTexture(loader.loadTexture("playerTexture")));
         Player player = new Player(playerModel, new Vector3f(100, 0, -50), 0, 180, 0, 0.6f);
+        player.getModel().getTexture().setReflectivity(0.1f);
+        player.getModel().getTexture().setShineDamper(0.5f);
         Camera camera = new Camera(player);
 
         grass.getTexture().setHasTransparency(true);

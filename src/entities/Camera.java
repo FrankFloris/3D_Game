@@ -81,6 +81,9 @@ public class Camera {
             float pitchChange = Mouse.getDY() * 0.1f;
             float anglechange = Mouse.getDX() * 0.3f;
             pitch -= pitchChange;
+            if (pitch < 0.1f){
+                pitch = 0.1f;
+            }
             angleAroundPlayer -= anglechange;
         }
     }
