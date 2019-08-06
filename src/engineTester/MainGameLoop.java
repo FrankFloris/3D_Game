@@ -60,7 +60,7 @@ public class MainGameLoop {
                 new ModelTexture(loader.loadTexture("lowPolyTree")));
 
         TexturedModel playerModel = new TexturedModel(OBJloader.loadObjModel("person", loader),
-                new ModelTexture(loader.loadTexture("playerTexture")));
+                new ModelTexture(loader.loadTexture("playerTexture2")));
         Player player = new Player(playerModel, new Vector3f(100, 0, -50), 0, 180, 0, 0.6f);
         player.getModel().getTexture().setReflectivity(0.1f);
         player.getModel().getTexture().setShineDamper(0.5f);
@@ -79,28 +79,53 @@ public class MainGameLoop {
         texture.setShineDamper(10);
         texture.setReflectivity(1);
 
+        Light light = new Light(new Vector3f(20000,40000,2000), new Vector3f(1,1,1));
+
+        Terrain terrain = new Terrain(0,-1,loader, texturePack, blendMap, "heightmap");
+        //terrain 2 werkt nog niet, moet uitvogelen op welk terrein player staat
+        Terrain terrain2 = new Terrain(1,-1, loader, texturePack, blendMap, "heightmap");
+
+        Terrain[][] terrains;
+        terrains = new Terrain[2][2];
+        terrains[0][0] = terrain;
+        terrains[1][0] = terrain2;
+        Terrain currentTerrain = terrains[(int) (player.getPosition().x/800)][(int) (player.getPosition().y/800)];
+//        terrains[0][1] = terrain3;
+//        terrains[1][1] = terrain4;
+
+
         List<Entity> entities = new ArrayList<Entity>();
         Random random = new Random(650000);
         for(int i=0;i<400;i++) {
             if (i % 7 == 0) {
-                entities.add(new Entity(grass, new Vector3f(random.nextFloat() * 800- 400, 0, random.nextFloat() * -600), 0, random.nextFloat() * 360, 0, 1.8f));
-                entities.add(new Entity(flower, new Vector3f(random.nextFloat() * 800 - 400, 0, random.nextFloat() * -600), 0, random.nextFloat() * 360, 0, 2.3f));
+                float x = random.nextFloat() * 800 -400;
+                float z = random.nextFloat() * -800;
+                float y = terrain.getHeightOfTerrain(x, z);
+                entities.add(new Entity(grass, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, 1.8f));
+                x = random.nextFloat() * 800 -400;
+                z = random.nextFloat() * -800;
+                y = terrain.getHeightOfTerrain(x, z);
+                entities.add(new Entity(flower, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, 2.3f));
             }
             if (i % 3 == 0) {
-            entities.add(new Entity(tree, new Vector3f(random.nextFloat() * 800 - 400, 0, random.nextFloat() * -600), 0, random.nextFloat() * 360, 0, random.nextFloat() *1 + 4));
-            entities.add(new Entity(bobble, new Vector3f(random.nextFloat() * 800 - 400, 0, random.nextFloat() * -600), 0, random.nextFloat() * 360, 0, random.nextFloat() * 0.1f + 0.6f));
-            entities.add(new Entity(fern, new Vector3f(random.nextFloat() * 800 - 400, 0, random.nextFloat() * -600), 0, random.nextFloat() * 360, 0, 0.9f));
+                float x = random.nextFloat() * 800 -400;
+                float z = random.nextFloat() * -800;
+                float y = terrain.getHeightOfTerrain(x, z);
+            entities.add(new Entity(tree, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, random.nextFloat() *1 + 4));
+                x = random.nextFloat() * 800 -400;
+                z = random.nextFloat() * -800;
+                y = terrain.getHeightOfTerrain(x, z);
+            entities.add(new Entity(bobble, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, random.nextFloat() * 0.1f + 0.6f));
+                x = random.nextFloat() * 800 -400;
+                z = random.nextFloat() * -800;
+                y = terrain.getHeightOfTerrain(x, z);
+            entities.add(new Entity(fern, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, 0.9f));
             }
         }
 
 
 
 
-//        Entity entity = new Entity(staticModel, new Vector3f(0,0,-50),0,0,0,1);
-        Light light = new Light(new Vector3f(20000,40000,2000), new Vector3f(1,1,1));
-
-        Terrain terrain = new Terrain(0,-1,loader, texturePack, blendMap);
-        Terrain terrain2 = new Terrain(-1,-1, loader, texturePack, blendMap);
         Entity dragon = new Entity(testModel, new Vector3f(0, 0, -150), 3 , 3 , 0f, 3f);
 
 
@@ -129,7 +154,13 @@ public class MainGameLoop {
         while(!Display.isCloseRequested()){
 //            entity.increaseRotation(0,0.25f,0);
             camera.move();
-            player.move();
+            //die 800 zou terrain.size moeten zijn...
+            int gridX = (int) (player.getPosition().x/800);
+            int gridZ = (int) (player.getPosition().z/800);
+            player.move(terrains[gridX][gridZ]);
+//            player.move(currentTerrain);
+
+//            player.move(terrain);
             renderer.processEntity(player);
 
 
@@ -159,4 +190,5 @@ public class MainGameLoop {
         DisplayManager.closeDisplay();
 
     }
+
 }
