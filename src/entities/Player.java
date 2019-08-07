@@ -55,7 +55,7 @@ public class Player extends Entity {
             this.currentSpeed = RUN_SPEED;
         } else if(Keyboard.isKeyDown(Keyboard.KEY_S)){
             this.currentSpeed = -RUN_SPEED;
-        } else{
+        } else {
             this.currentSpeed = 0;
         }
 

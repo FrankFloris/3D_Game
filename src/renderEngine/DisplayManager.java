@@ -56,4 +56,8 @@ public class DisplayManager {
     private static long getCurrentTime(){
         return Sys.getTime()*1000/Sys.getTimerResolution();
     }
+
+    public static float getFPS() {
+        return 1f/delta;
+    }
 }
