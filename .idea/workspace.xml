@@ -2,36 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b55acb1e-4b7c-4bf1-8a7c-aecc34077992" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/Lights.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/health.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/heightmap perlin.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/lamp.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/lamp.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/lamp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pine.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/socuwan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/thinmatrix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guis/GuiRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guis/GuiShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guis/GuiTexture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guis/guiFragmentShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guis/guiVertexShader.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jars/PNGDecoder.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Night Sky Textures.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Skybox Images.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/dayBack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/dayBottom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/dayFront.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/dayLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/dayRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/dayTop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/nightBack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/nightBottom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/nightFront.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/nightLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/nightRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/nightTop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/LightComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/skybox/SkyboxRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/skybox/SkyboxShader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/skybox/skyboxFragmentShader.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/skybox/skyboxVertexShader.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/textures/TextureData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lwjgl.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/ShaderProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/ShaderProgram.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/StaticShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/StaticShader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/TerrainShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/TerrainShader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/fragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/terrainFragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/terrainFragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/terrainVertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/terrainVertexShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/vertexShader.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/engineTester/MainGameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/engineTester/MainGameLoop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Camera.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Light.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Light.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiShader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiTexture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiTexture.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/models/RawModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/models/RawModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/models/TexturedModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/models/TexturedModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/objConverter/ModelData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/objConverter/ModelData.class" afterDir="false" />
@@ -48,25 +53,12 @@
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/textures/TerrainTexture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/textures/TerrainTexture.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/textures/TerrainTexturePack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/textures/TerrainTexturePack.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Maths.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Maths.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/fern.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/fern.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/res.zip" beforeDir="false" afterPath="$PROJECT_DIR$/res/res.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Light.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/guis/GuiRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/guis/GuiRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/EntityRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/EntityRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderEngine/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/Loader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/StaticShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/TerrainShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/TerrainShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/fragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/terrainFragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/terrainFragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/terrainVertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/terrainVertexShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/vertexShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textures/ModelTexture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textures/ModelTexture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/toolbox/Maths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolbox/Maths.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,13 +88,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jars/PNGDecoder.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -198,80 +191,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>12</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>GameEngine</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>natives</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
