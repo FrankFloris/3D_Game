@@ -61,6 +61,14 @@ public class SkyboxRenderer {
     private static String[] TEXTURE_FILES = {"dayRight", "dayLeft", "dayTop", "dayBottom", "dayBack", "dayFront"};
     private static String[] NIGHT_TEXTURE_FILES = {"nightRight", "nightLeft", "nightTop", "nightBottom", "nightBack", "nightFront"};
 
+    public static String[] getTextureFiles() {
+        return TEXTURE_FILES;
+    }
+
+    public static String[] getNightTextureFiles() {
+        return NIGHT_TEXTURE_FILES;
+    }
+
     private RawModel cube;
     private int texture;
     private int nightTexture;
@@ -91,43 +99,31 @@ public class SkyboxRenderer {
         shader.stop();
     }
 
-    private void bindTexturesDDDDD(){
-        GL13.glActiveTexture(GL13.GL_TEXTURE0);
-        GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, texture);
-        GL13.glActiveTexture(GL13.GL_TEXTURE1);
-        GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, nightTexture);
-        shader.loadBlendFactor(0.5f);
-    }
-
     private void bindTextures(){
+        DayAndNightHandler.calculateBlendFactor(DayAndNightHandler.calculateTimeOfDay());
         time += DisplayManager.getFrameTimeSeconds() * 1000;
         time %= 48000;
         int texture1;
         int texture2;
-        float blendFactor;
         if(time >= 0 && time < 10000){
             texture1 = nightTexture;
             texture2 = nightTexture;
-            blendFactor = (time - 0)/(10000 - 0);
         }else if(time >= 10000 && time < 16000){
             texture1 = nightTexture;
             texture2 = texture;
-            blendFactor = (time - 10000)/(16000 - 10000);
         }else if(time >= 16000 && time < 42000){
             texture1 = texture;
             texture2 = texture;
-            blendFactor = (time - 16000)/(42000 - 16000);
         }else{
             texture1 = texture;
             texture2 = nightTexture;
-            blendFactor = (time - 42000)/(48000 - 42000);
         }
 
         GL13.glActiveTexture(GL13.GL_TEXTURE0);
         GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, texture1);
         GL13.glActiveTexture(GL13.GL_TEXTURE1);
         GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, texture2);
-        shader.loadBlendFactor(blendFactor);
+        shader.loadBlendFactor(DayAndNightHandler.calculateBlendFactor(DayAndNightHandler.calculateTimeOfDay()));
     }
 
 }

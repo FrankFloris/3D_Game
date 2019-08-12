@@ -12,11 +12,14 @@ import org.newdawn.slick.opengl.Texture;
 import renderEngine.*;
 import models.RawModel;
 import shaders.StaticShader;
+import skybox.SkyboxRenderer;
+import skybox.SkyboxShader;
 import terrains.Terrain;
 import textures.ModelTexture;
 import org.lwjgl.opengl.Display;
 import textures.TerrainTexture;
 import textures.TerrainTexturePack;
+import toolbox.MousePicker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,12 +49,13 @@ public class MainGameLoop {
         Terrain terrain3 = new Terrain(-1,0,loader, texturePack, blendMap, "heightmap");
         Terrain terrain4 = new Terrain(0,0, loader, texturePack, blendMap, "heightmap");
 
-        Terrain[][] terrains;
-        terrains = new Terrain[2][2];
-        terrains[0][0] = terrain;
-        terrains[0][1] = terrain3;
-        terrains[1][0] = terrain2;
-        terrains[1][1] = terrain4;
+//        Terrain[][] terrains;
+//        terrains = new Terrain[2][2];
+        Terrain[][] terrains = new Terrain[][]{{terrain, terrain3}, {terrain2, terrain4}};
+//        terrains[0][0] = terrain;
+//        terrains[1][0] = terrain2;
+//        terrains[0][1] = terrain3;
+//        terrains[1][1] = terrain4;
 
 
 
@@ -70,8 +74,6 @@ public class MainGameLoop {
         ModelTexture fernTextureAtlas = new ModelTexture(loader.loadTexture("fern"));
         fernTextureAtlas.setNumberOfRows(2);
         TexturedModel fern = new TexturedModel(OBJloader.loadObjModel("fern", loader), fernTextureAtlas);
-//        TexturedModel fern = new TexturedModel(OBJloader.loadObjModel("fern", loader), fernTextureAtlas,
-//                new ModelTexture(loader.loadTexture("fern")));
         TexturedModel bobble = new TexturedModel(OBJloader.loadObjModel("lowPolyTree", loader),
                 new ModelTexture(loader.loadTexture("lowPolyTree")));
         TexturedModel lamp = new TexturedModel(OBJloader.loadObjModel("lamp", loader),
@@ -97,24 +99,11 @@ public class MainGameLoop {
         texture.setReflectivity(1);
 
 
-
-
-
-
-//        Terrain terrain = new Terrain(-1,-1,loader, texturePack, blendMap, "heightmap");
-//        Terrain terrain2 = new Terrain(0,-1, loader, texturePack, blendMap, "heightmap");
-//
-//        Terrain[][] terrains;
-//        terrains = new Terrain[2][2];
-//        terrains[0][0] = terrain;
-//        terrains[1][0] = terrain2;
-
         List<Light> lights = new ArrayList<Light>();
-        Light sun = new Light(new Vector3f(20000,40000,2000), new Vector3f(0.4f,0.4f,0.4f));
+        Light sun = new Light(new Vector3f(0,1000,-7000), new Vector3f(0.4f,0.4f,0.4f), new Vector3f(1,0,0));
         lights.add(sun);
-//        lights.add(new Light(new Vector3f(150,terrains[(int) (Math.floor(150%800)/800+1)][(int) (Math.floor(-200%800)/800+1)].getHeightOfTerrain(150, -200)+15f,-200), new Vector3f(2,0,0), new Vector3f(1, 0.01f, 0.002f)));
-//        lights.add(new Light(new Vector3f(200,10,-20), new Vector3f(0,0,2), new Vector3f(1, 0.01f, 0.002f)));
-//        lights.add(new Light(new Vector3f(300,50,-100), new Vector3f(0,2,0), new Vector3f(1, 0.01f, 0.002f)));
+        Light moon = new Light(new Vector3f(100, 220, -50), new Vector3f(1f, 1f, 1f));
+        lights.add(moon);
 
         List<Entity> entities = new ArrayList<Entity>();
         Random random = new Random(650000);
@@ -166,25 +155,7 @@ public class MainGameLoop {
             }
         }
 
-
-
-
-//        entities.add(new Entity(lamp, new Vector3f(150, terrains[(int) (Math.floor(150%800)/800+1)][(int) (Math.floor(-200%800)/800+1)].getHeightOfTerrain(150, -200), -200), 0 ,0 ,0 ,1));
-
-        Entity dragon = new Entity(testModel, new Vector3f(0, 0, -150), 3 , 3 , 0f, 3f);
-
-
-
-//        List<Entity> allCubes = new ArrayList<Entity>();
-//        Random random = new Random();
-//        for (int i = 0; i < 20; i++) {
-//            float x = random.nextFloat() * 100 - 50;
-//            float y = random.nextFloat() * 100 - 50;
-//            float z = random.nextFloat() * -300;
-//            allCubes.add(new Entity(cubeModel, new Vector3f(x, y, z), random.nextFloat() * 180f, random.nextFloat() * 180f, 0f, 1f));
-//        }
-
-//        List<Entity> allDragons = new ArrayList<Entity>();
+        Entity dragon = new Entity(testModel, new Vector3f(0, 0, -150), 3 , 3 , 0f, 1f);
 
         MasterRenderer renderer = new MasterRenderer(loader);
 //        Random random = new Random();
@@ -203,34 +174,39 @@ public class MainGameLoop {
 
         GuiRenderer guiRenderer = new GuiRenderer(loader);
 
+        MousePicker picker = new MousePicker(camera, renderer.getProjectionMatrix(), terrains);
 
         while(!Display.isCloseRequested()){
-//            entity.increaseRotation(0,0.25f,0);
-            camera.move();
-            //die 800 zou terrain.size moeten zijn...
-            int gridX = (int) (player.getPosition().x/800);
-            int gridZ = (int) (player.getPosition().z/800);
+//            int gridX = (int) (player.getPosition().x/Terrain.SIZE);
+//            int gridZ = (int) (player.getPosition().z/Terrain.SIZE);
 //            player.move(terrains[gridX][gridZ]);
-            player.move(terrains[(int) Math.floor((player.getPosition().x%800)/800+1)][(int) Math.floor((player.getPosition().z%800)/800+1)]);
+            player.move(terrains[(int) Math.floor((player.getPosition().x % Terrain.SIZE) / Terrain.SIZE + 1)]
+                    [(int) Math.floor((player.getPosition().z%Terrain.SIZE) / Terrain.SIZE+1)]);
 //            System.out.println(Math.floor((player.getPosition().x%800)/800+1) + " and " + Math.floor((player.getPosition().z%800)/800+1));
-//            player.move(terrain);
+
 //            System.out.println(DisplayManager.getFPS());
+            camera.move();
+            picker.update();
+            Vector3f terrainPoint = picker.getCurrentTerrainPoint();
+            if (terrainPoint != null){
+//                dragon.setPosition(terrainPoint);
+                sun.setPosition(terrainPoint);
+            }
+//            System.out.println(picker.getCurrentRay());
+
+
             renderer.processEntity(player);
 
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 2; j++) {
+                    renderer.processTerrain(terrains[i][j]);
+                }
 
-//            for (Entity cube: allCubes){
-//                renderer.processEntity(cube);
-//                cube.increaseRotation(0,0.25f,0);
-//            }
-//            for (Entity dragon: allDragons){
-//                renderer.processEntity(dragon);
-//                dragon.increaseRotation(0,0.25f,0);
-//            }
-
-            renderer.processTerrain(terrain);
-            renderer.processTerrain(terrain2);
-            renderer.processTerrain(terrain3);
-            renderer.processTerrain(terrain4);
+            }
+//            renderer.processTerrain(terrain);
+//            renderer.processTerrain(terrain2);
+//            renderer.processTerrain(terrain3);
+//            renderer.processTerrain(terrain4);
             renderer.processEntity(dragon);
 
             dragon.increaseRotation(0,0.25f, 0);
@@ -239,6 +215,7 @@ public class MainGameLoop {
             }
 
             lights.sort(new LightComparator(player));
+
 
             renderer.render(lights, camera);
             guiRenderer.render(guis);

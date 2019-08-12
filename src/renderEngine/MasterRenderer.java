@@ -4,14 +4,19 @@ import entities.Camera;
 import entities.Entity;
 import entities.Light;
 import models.TexturedModel;
+import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.util.Color;
 import org.lwjgl.util.vector.Matrix4f;
 import shaders.StaticShader;
 import shaders.TerrainShader;
+import skybox.DayAndNightHandler;
 import skybox.SkyboxRenderer;
 import terrains.Terrain;
 
+import java.awt.image.BufferedImage;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,9 +28,12 @@ public class MasterRenderer {
     private static final float NEAR_PLANE = 0.1f;
     private static final float FAR_PLANE = 1000;
 
-    private static final float RED = 0.5f;
-    private static final float GREEN = 0.5f;
-    private static final float BLUE = 0.5f;
+    private float time = 0;
+
+    //RGB no longer final or static
+    private float RED = DayAndNightHandler.calculateColour(DayAndNightHandler.calculateTimeOfDay(),"RED");   //0.23f;
+    private float GREEN = DayAndNightHandler.calculateColour(DayAndNightHandler.calculateTimeOfDay(),"GREEN");
+    private float BLUE = DayAndNightHandler.calculateColour(DayAndNightHandler.calculateTimeOfDay(), "BLUE");
 
     private Matrix4f projectionMatrix;
 
@@ -46,6 +54,10 @@ public class MasterRenderer {
         renderer = new EntityRenderer(shader, projectionMatrix);
         terrainRenderer = new TerrainRenderer(terrainShader, projectionMatrix);
         skyboxRenderer = new SkyboxRenderer(loader, projectionMatrix);
+    }
+
+    public Matrix4f getProjectionMatrix(){
+        return projectionMatrix;
     }
 
     public static void enableCulling(){
@@ -118,4 +130,5 @@ public class MasterRenderer {
         shader.cleanUp();
         terrainShader.cleanUp();
     }
+
 }

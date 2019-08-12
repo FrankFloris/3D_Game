@@ -71,8 +71,8 @@ public class Camera {
         if (distanceFromPlayer < 20){
             distanceFromPlayer = 20;
         }
-        if (distanceFromPlayer > 100){
-            distanceFromPlayer = 100;
+        if (distanceFromPlayer > 120){
+            distanceFromPlayer = 120;
         }
     }
 
