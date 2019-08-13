@@ -1,5 +1,7 @@
 package toolbox;
 
+import entities.Entity;
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Matrix4f;
@@ -7,8 +9,12 @@ import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
 
+import renderEngine.DisplayManager;
 import terrains.Terrain;
 import entities.Camera;
+
+import java.security.Key;
+import java.util.List;
 
 public class MousePicker {
 
@@ -23,6 +29,7 @@ public class MousePicker {
 
     private Terrain[][] terrains;
     private Vector3f currentTerrainPoint;
+    private Entity entityInHand;
 
     public MousePicker(Camera cam, Matrix4f projection, Terrain[][] terrains) {
         camera = cam;
@@ -133,5 +140,30 @@ public class MousePicker {
         }
 
         return terrains[x][z];
+    }
+
+    public void grabEntity(Vector3f terrainPoint, List<Entity> entities) {
+        float radius = 4f;
+        if(terrainPoint != null){
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) && entityInHand == null && Mouse.isButtonDown(0)){
+                for (Entity entity: entities){
+                    float entityX = entity.getPosition().x;
+                    float entityZ = entity.getPosition().z;
+                    if (entityX-radius < terrainPoint.x && entityX+radius > terrainPoint.x &&
+                            entityZ-radius < terrainPoint.z && entityZ+radius > terrainPoint.z) {
+                        entity.increasePosition(1000.0f, 1000.0f, 1000.0f);
+                        entityInHand = entity;
+                        entities.remove(entity);
+                        break;
+                    }
+                }
+            }
+             else if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) && entityInHand != null && Mouse.isButtonDown(1)){
+                entityInHand.setPosition(terrainPoint);
+                entities.add(entityInHand);
+                entityInHand = null;
+            }
+
+        }
     }
 }

@@ -12,6 +12,7 @@ import org.lwjgl.util.vector.Vector3f;
 import shaders.TerrainShader;
 import terrains.Terrain;
 import textures.ModelTexture;
+import textures.TerrainTexture;
 import textures.TerrainTexturePack;
 import toolbox.Maths;
 
@@ -46,6 +47,7 @@ public class TerrainRenderer {
         GL20.glEnableVertexAttribArray(2);
         bindTextures(terrain);
         shader.loadShineVariables(1,0);
+
     }
 
     private void bindTextures(Terrain terrain){

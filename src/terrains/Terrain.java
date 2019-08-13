@@ -106,7 +106,7 @@ public class Terrain {
                 heights[j][i] = height;
                 vertices[vertexPointer*3+1] = height;
                 vertices[vertexPointer*3+2] = (float)i/((float)VERTEX_COUNT - 1) * SIZE;
-                Vector3f normal = calculateNormal(j, i, image);
+                Vector3f normal = calculateNormal(j, i, image, VERTEX_COUNT);
                 normals[vertexPointer*3] = normal.x;
                 normals[vertexPointer*3+1] = normal.y;
                 normals[vertexPointer*3+2] = normal.z;
@@ -133,12 +133,56 @@ public class Terrain {
         return loader.loadToVAO(vertices, textureCoords, normals, indices);
     }
 
-    private Vector3f calculateNormal(int x, int z, BufferedImage image){
-        float heightL = getHeight(x-1, z, image);
-        float heightR = getHeight(x+1, z, image);
-        float heightD = getHeight(x, z-1, image);
-        float heightU = getHeight(x, z+1, image);
-        Vector3f normal = new Vector3f(heightL-heightR, 2f, heightD - heightU);
+//    private Vector3f calculateNormal(int x, int z, BufferedImage image){
+//        float heightL = getHeight(x-1, z, image);
+//        float heightR = getHeight(x+1, z, image);
+//        float heightD = getHeight(x, z-1, image);
+//        float heightU = getHeight(x, z+1, image);
+//        Vector3f normal = new Vector3f(heightL-heightR, 2f, heightD - heightU);
+//        normal.normalise();
+//        return normal;
+//    }
+    private Vector3f calculateNormal(int x, int z, BufferedImage image, int VERTEX_COUNT) {
+
+        float heightL;
+        float heightR;
+        float heightD;
+        float heightU;
+
+        if( x == 0){
+            heightL = getHeight(x-1 + VERTEX_COUNT, z, image);
+            heightR = getHeight(x+1, z, image);
+        }else if(x == 1){
+            heightL = getHeight(x-1 + VERTEX_COUNT - 1, z, image);
+            heightR = getHeight(x+1, z, image);
+        }else if (x == VERTEX_COUNT){
+            heightR = getHeight(x+1 - VERTEX_COUNT, z, image);
+            heightL = getHeight(x-1, z, image);
+        }else if (x == VERTEX_COUNT - 1){
+            heightR = getHeight(x+1 - VERTEX_COUNT + 1, z, image);
+            heightL = getHeight(x-1, z, image);
+        }else{
+            heightL = getHeight(x-1, z, image);
+            heightR = getHeight(x+1, z, image);
+        }
+        if(z == 0){
+            heightD = getHeight(x, z-1 + VERTEX_COUNT, image);
+            heightU = getHeight(x, z+1, image);
+        }else if(z == 1){
+            heightD = getHeight(x, z-1 + VERTEX_COUNT - 1, image);
+            heightU = getHeight(x, z+1, image);
+        }else if(z == VERTEX_COUNT){
+            heightD = getHeight(x, z-1, image);
+            heightU = getHeight(x, z+1 - VERTEX_COUNT, image);
+        }else if(z == VERTEX_COUNT - 1){
+            heightD = getHeight(x, z-1, image);
+            heightU = getHeight(x, z+1 - VERTEX_COUNT + 1, image);
+        }else{
+            heightD = getHeight(x, z-1, image);
+            heightU = getHeight(x, z+1, image);
+        }
+
+        Vector3f normal = new Vector3f(heightL - heightR, 2f, heightD - heightU);
         normal.normalise();
         return normal;
     }

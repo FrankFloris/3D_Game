@@ -1,8 +1,7 @@
 package renderEngine;
 
-import entities.Camera;
-import entities.Entity;
-import entities.Light;
+import engineTester.MainGameLoop;
+import entities.*;
 import models.TexturedModel;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.Display;
@@ -27,8 +26,6 @@ public class MasterRenderer {
     private static final float FIELDOFVIEW = 70;
     private static final float NEAR_PLANE = 0.1f;
     private static final float FAR_PLANE = 1000;
-
-    private float time = 0;
 
     //RGB no longer final or static
     private float RED = DayAndNightHandler.calculateColour(DayAndNightHandler.calculateTimeOfDay(),"RED");   //0.23f;
@@ -124,6 +121,21 @@ public class MasterRenderer {
             entities.put(entityModel, newBatch);
         }
 
+    }
+
+    public void renderScene(List<Entity> entities, Terrain[][] terrains, List<Light> lights, Camera camera, Player player){
+        for (Entity entity: entities){
+            processEntity(entity);
+        }
+        for (int i = 0; i < MainGameLoop.getMAPWIDTH(); i++) {
+            for (int j = 0; j <MainGameLoop.getMAPDEPTH(); j++) {
+                processTerrain(terrains[i][j]);
+            }
+        }
+        lights.sort(new LightComparator(player));
+        render(lights, camera);
+//        System.out.println(lights.get(3).getPosition());
+        processEntity(player);
     }
 
     public void cleanUp(){
