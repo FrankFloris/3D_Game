@@ -1,5 +1,6 @@
 package entities;
 
+import engineTester.MainGameLoop;
 import models.TexturedModel;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.util.vector.Vector3f;
@@ -51,6 +52,7 @@ public class Player extends Entity {
                 super.getPosition().y = terrainHeight;
             }
         } catch (Exception e) {
+            System.out.println("Mustn't fall off the world!");
             upwardsSpeed = 0;
         }
     }

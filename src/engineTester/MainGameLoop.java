@@ -111,9 +111,14 @@ public class MainGameLoop {
                     float z = random.nextFloat() * -Terrain.SIZE + (Terrain.SIZE * j);
                     float y = terrains[(int) (Math.floor(x%Terrain.SIZE)/Terrain.SIZE+1)]
                             [(int) (Math.floor(z%Terrain.SIZE)/Terrain.SIZE+1)].getHeightOfTerrain(x, z);
+                    /*DIT MOET GECHECKT WORDEN!!!!*/
+                    x = random.nextFloat() * -Terrain.SIZE;
+                    z = random.nextFloat() * -Terrain.SIZE;
+                    y = terrains[0][0].getHeightOfTerrain(x, z);
                     if (k % 25 == 0) {
-                        entities.add(new Entity(lamp, new Vector3f(x, y, z), 0, 0, 0, 1));
-                        lights.add(new Light(new Vector3f(x, y+15, z), new Vector3f(2,2,0), new Vector3f(1, 0.01f, 0.002f))); //yellow
+                        entities.add(new Entity(lamp, new Vector3f(x+Terrain.SIZE*i, y, z+Terrain.SIZE*j), 0, 0, 0, 1));
+//                        System.out.println(entities.get(entities.size()-1).getPosition());
+                        lights.add(new Light(new Vector3f(x+Terrain.SIZE*i, y+15, z+Terrain.SIZE*i), new Vector3f(2,2,0), new Vector3f(1, 0.01f, 0.002f))); //yellow
                     } else if (k % 7 == 0){
                         entities.add(new Entity(grass, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, 1.8f));
                         x = random.nextFloat() * -Terrain.SIZE + (Terrain.SIZE * i);
@@ -209,6 +214,7 @@ public class MainGameLoop {
             System.out.println(light.getPosition());
         }
 
+
         while(!Display.isCloseRequested()){
 //            player.move(terrains[(int) Math.floor((player.getPosition().x % Terrain.SIZE) / Terrain.SIZE + 1)]
 //                    [(int) Math.floor((player.getPosition().z%Terrain.SIZE) / Terrain.SIZE+1)]);
@@ -227,7 +233,10 @@ public class MainGameLoop {
 //                sun.setPosition(terrainPoint);
             }
 
-            picker.grabEntity(picker.getCurrentTerrainPoint(), entities);
+
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                picker.moveEntity(picker.getCurrentTerrainPoint(), entities);
+            }
             renderer.processEntity(dragon);
             dragon.increaseRotation(0,0.25f, 0);
 

@@ -21,8 +21,8 @@ public class DisplayManager {
 
         try {
             Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
-            Display.create(new PixelFormat(8,8,8,8), attribs); //werkt niet op laptop..
-//            Display.create(new PixelFormat());
+//            Display.create(new PixelFormat(8,8,8,8), attribs); //werkt niet op laptop..
+            Display.create(new PixelFormat());
             GL11.glEnable(GL13.GL_MULTISAMPLE);
             GL11.glHint(GL11.GL_PERSPECTIVE_CORRECTION_HINT, GL11.GL_NICEST);
 //            Display.create(new PixelFormat());

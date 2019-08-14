@@ -69,17 +69,15 @@ public class Terrain {
         }
         float xCoord = (terrainX % gridSquareSize)/gridSquareSize;
         float zCoord = (terrainZ % gridSquareSize)/gridSquareSize;
-        float answer;
         if(xCoord <= (1-zCoord)){
-            answer = Maths.barryCentric(new Vector3f(0, heights[gridX][gridZ], 0), new Vector3f(1,
+            return Maths.barryCentric(new Vector3f(0, heights[gridX][gridZ], 0), new Vector3f(1,
                             heights[gridX + 1][gridZ], 0), new Vector3f(0,
                             heights[gridX][gridZ + 1], 1), new Vector2f(xCoord, zCoord));
         } else {
-            answer = Maths.barryCentric(new Vector3f(1, heights[gridX + 1][gridZ], 0), new Vector3f(1,
+            return Maths.barryCentric(new Vector3f(1, heights[gridX + 1][gridZ], 0), new Vector3f(1,
                             heights[gridX + 1][gridZ + 1], 1), new Vector3f(0,
                             heights[gridX][gridZ + 1], 1), new Vector2f(xCoord, zCoord));
         }
-        return answer;
     }
 
     private RawModel generateTerrain(Loader loader, String heightMap){
@@ -142,6 +140,11 @@ public class Terrain {
 //        normal.normalise();
 //        return normal;
 //    }
+
+    /**
+     * dit is een JavaDoc comment
+     * met deze methode zijn er geen duidelijke randen tussen terrains meer.
+     */
     private Vector3f calculateNormal(int x, int z, BufferedImage image, int VERTEX_COUNT) {
 
         float heightL;
