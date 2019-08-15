@@ -1,7 +1,9 @@
 package entities;
 
+import engineTester.MainGameLoop;
 import models.TexturedModel;
 import org.lwjgl.util.vector.Vector3f;
+import terrains.Terrain;
 
 public class Entity {
 
@@ -36,10 +38,16 @@ public class Entity {
         return (float)row / (float)model.getTexture().getNumberOfRows();
     }
 
-    public void increasePosition(float dx, float dy, float dz){
+    public void increasePosition(float dx, float dy, float dz) {
         this.position.x += dx;
         this.position.y += dy;
         this.position.z += dz;
+    }
+
+    public void decreasePosition(float dx, float dy, float dz) {
+        this.position.x -= dx;
+        this.position.y -= dy;
+        this.position.z -= dz;
     }
 
     public void increaseRotation(float dx, float dy, float dz){

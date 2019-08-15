@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b55acb1e-4b7c-4bf1-8a7c-aecc34077992" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/toolbox/Matrix2f.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/toolbox/Matrix3f.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/toolbox/Matrix4f.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/toolbox/Vector2f.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/toolbox/Vector3f.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/toolbox/Vector4f.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/ShaderProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/ShaderProgram.class" afterDir="false" />
@@ -42,17 +36,20 @@
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/textures/TerrainTexturePack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/textures/TerrainTexturePack.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/textures/TextureData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/textures/TextureData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Maths.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Maths.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix2f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix2f.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix3f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix3f.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix4f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix4f.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/MousePicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/MousePicker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector2f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector2f.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector3f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector3f.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector4f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector4f.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/water/WaterRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/water/WaterRenderer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/water/WaterShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/water/WaterShader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/water/WaterTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/water/WaterTile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Light.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/terrains/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/terrains/Terrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/toolbox/MousePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolbox/MousePicker.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

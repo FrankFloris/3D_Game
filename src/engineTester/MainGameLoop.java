@@ -107,10 +107,12 @@ public class MainGameLoop {
         for (int i = 0; i < MAPWIDTH; i++){
             for (int j = 0; j < MAPDEPTH; j++){
                 for (int k = 0; k < 400; k++){
-                    float x = random.nextFloat() * -Terrain.SIZE + (Terrain.SIZE * i);
-                    float z = random.nextFloat() * -Terrain.SIZE + (Terrain.SIZE * j);
-                    float y = terrains[(int) (Math.floor(x%Terrain.SIZE)/Terrain.SIZE+1)]
-                            [(int) (Math.floor(z%Terrain.SIZE)/Terrain.SIZE+1)].getHeightOfTerrain(x, z);
+                    float x = random.nextFloat() * -Terrain.SIZE;
+                    float z = random.nextFloat() * -Terrain.SIZE;
+                    float y = terrains[0][0].getHeightOfTerrain(x, z);
+                    //TODO check why this does not work
+//                    float y = terrains[(int) (Math.floor(x%Terrain.SIZE)/Terrain.SIZE+1)]
+//                            [(int) (Math.floor(z%Terrain.SIZE)/Terrain.SIZE+1)].getHeightOfTerrain(x, z);
                     /*DIT MOET GECHECKT WORDEN!!!!*/
                     x = random.nextFloat() * -Terrain.SIZE;
                     z = random.nextFloat() * -Terrain.SIZE;
@@ -118,26 +120,23 @@ public class MainGameLoop {
                     if (k % 25 == 0) {
                         entities.add(new Entity(lamp, new Vector3f(x+Terrain.SIZE*i, y, z+Terrain.SIZE*j), 0, 0, 0, 1));
 //                        System.out.println(entities.get(entities.size()-1).getPosition());
-                        lights.add(new Light(new Vector3f(x+Terrain.SIZE*i, y+15, z+Terrain.SIZE*i), new Vector3f(2,2,0), new Vector3f(1, 0.01f, 0.002f))); //yellow
+                        lights.add(new Light(new Vector3f(x+Terrain.SIZE*i, y+15, z+Terrain.SIZE*j), new Vector3f(2,2,0), new Vector3f(1, 0.01f, 0.002f))); //yellow
                     } else if (k % 7 == 0){
-                        entities.add(new Entity(grass, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, 1.8f));
-                        x = random.nextFloat() * -Terrain.SIZE + (Terrain.SIZE * i);
-                        z = random.nextFloat() * -Terrain.SIZE + (Terrain.SIZE * j);
-                        y = terrains[(int) (Math.floor(x%Terrain.SIZE)/Terrain.SIZE+1)]
-                                [(int) (Math.floor(z%Terrain.SIZE)/Terrain.SIZE+1)].getHeightOfTerrain(x, z);
-                        entities.add(new Entity(flower, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, 2.3f));
+                        entities.add(new Entity(grass, new Vector3f(x+Terrain.SIZE*i, y, z+Terrain.SIZE*j), 0, random.nextFloat() * 360, 0, 1.8f));
+                        x = random.nextFloat() * -Terrain.SIZE;
+                        z = random.nextFloat() * -Terrain.SIZE;
+                        y = terrains[0][0].getHeightOfTerrain(x, z);
+                        entities.add(new Entity(flower, new Vector3f(x+Terrain.SIZE*i, y, z+Terrain.SIZE*j), 0, random.nextFloat() * 360, 0, 2.3f));
                     } else if (k % 3 == 0){
-                        entities.add(new Entity(pine, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, random.nextFloat() *1 + 0.5f));
-                        x = random.nextFloat() * -Terrain.SIZE + (Terrain.SIZE * i);
-                        z = random.nextFloat() * -Terrain.SIZE + (Terrain.SIZE * j);
-                        y = terrains[(int) (Math.floor(x%Terrain.SIZE)/Terrain.SIZE+1)]
-                                [(int) (Math.floor(z%Terrain.SIZE)/Terrain.SIZE+1)].getHeightOfTerrain(x, z);
-                        entities.add(new Entity(bobble, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, random.nextFloat() * 0.1f + 0.6f));
-                        x = random.nextFloat() * -Terrain.SIZE + (Terrain.SIZE * i);
-                        z = random.nextFloat() * -Terrain.SIZE + (Terrain.SIZE * j);
-                        y = terrains[(int) (Math.floor(x%Terrain.SIZE)/Terrain.SIZE+1)]
-                                [(int) (Math.floor(z%Terrain.SIZE)/Terrain.SIZE+1)].getHeightOfTerrain(x, z);
-                        entities.add(new Entity(fern, random.nextInt(4), new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, 0.9f)); //random after fern is random fern texture
+                        entities.add(new Entity(pine, new Vector3f(x+Terrain.SIZE*i, y, z+Terrain.SIZE*j), 0, random.nextFloat() * 360, 0, random.nextFloat() *1 + 0.5f));
+                        x = random.nextFloat() * -Terrain.SIZE;
+                        z = random.nextFloat() * -Terrain.SIZE;
+                        y = terrains[0][0].getHeightOfTerrain(x, z);
+                        entities.add(new Entity(bobble, new Vector3f(x+Terrain.SIZE*i, y, z+Terrain.SIZE*j), 0, random.nextFloat() * 360, 0, random.nextFloat() * 0.1f + 0.6f));
+                        x = random.nextFloat() * -Terrain.SIZE;
+                        z = random.nextFloat() * -Terrain.SIZE;
+                        y = terrains[0][0].getHeightOfTerrain(x, z);
+                        entities.add(new Entity(fern, random.nextInt(4), new Vector3f(x+Terrain.SIZE*i, y, z+Terrain.SIZE*j), 0, random.nextFloat() * 360, 0, 0.9f)); //random after fern is random fern texture
                     }
                 }
             }
@@ -220,8 +219,16 @@ public class MainGameLoop {
 //                    [(int) Math.floor((player.getPosition().z%Terrain.SIZE) / Terrain.SIZE+1)]);
             int gridX = (int)(player.getPosition().x / Terrain.SIZE+1);
             int gridZ = (int)(player.getPosition().z / Terrain.SIZE+1);
-            player.move(terrains[gridX][gridZ]);
 
+            if (!(gridX >= MAPWIDTH || player.getPosition().x < -800 || gridZ >= MAPDEPTH || player.getPosition().z < -800)) {
+                player.move(terrains[gridX][gridZ]);
+            } else if(player.getPosition().x < -800 || player.getPosition().z < -800 ) {
+                player.decreasePosition(-1, 0, -1);
+                System.out.println("Don't fall off the world!");
+            } else if(gridX >= MAPWIDTH || gridZ >= MAPDEPTH){
+                player.decreasePosition(1, 0, 1);
+                System.out.println("Don't fall off the world!");
+            }
 
 //            System.out.println(DisplayManager.getFPS());
             camera.move();
@@ -232,6 +239,9 @@ public class MainGameLoop {
 //                dragon.setPosition(terrainPoint);
 //                sun.setPosition(terrainPoint);
             }
+
+            //TODO entities. add doe hier iets mee
+//            new Vector3f(x+Terrain.SIZE*i, y, z+Terrain.SIZE*j)
 
 
             if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
