@@ -1,5 +1,6 @@
 package toolbox;
 
+import engineTester.MainGameLoop;
 import entities.Entity;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
@@ -38,6 +39,18 @@ public class MousePicker {
         this.terrains = terrains;
     }
 
+    public static float getTerrainPointY(float x, float z, Terrain terrain) {
+        for (int i = 0; i < MainGameLoop.getMAPWIDTH()-1; i++) {
+            if (x >= Terrain.SIZE*i && x <= Terrain.SIZE*(i+1)){x = x - Terrain.SIZE*(i+1);}
+        }
+        for (int i = 0; i < MainGameLoop.getMAPDEPTH()-1; i++) {
+            if (z >= Terrain.SIZE*i && z <= Terrain.SIZE*(i+1)){z = z - Terrain.SIZE*(i+1);}
+        }
+        System.out.println(x);
+        System.out.println(z);
+        return terrain.getHeightOfTerrain(x,z);
+    }
+
     public Vector3f getCurrentTerrainPoint() {
         return currentTerrainPoint;
     }
@@ -54,6 +67,12 @@ public class MousePicker {
             assert currentTerrainPoint != null;
             currentTerrainPoint.y = terrains[(int) Math.floor((currentTerrainPoint.x % Terrain.SIZE) / Terrain.SIZE + 1)]
                     [(int) Math.floor((currentTerrainPoint.z%Terrain.SIZE) / Terrain.SIZE+1)].getHeightOfTerrain(currentTerrainPoint.x, currentTerrainPoint.z);
+//            System.out.println((int) Math.floor((currentTerrainPoint.x % Terrain.SIZE)/800+1));
+//            System.out.println(currentTerrainPoint.x);
+////            if (currentTerrainPoint.x >= 800 && currentTerrainPoint.x <=1600){System.out.println(currentTerrainPoint.x-800);}
+////            if (currentTerrainPoint.x >= 800 && currentTerrainPoint.x <=1600){System.out.println(currentTerrainPoint.x%800);}
+//            if (currentTerrainPoint.x >= Terrain.SIZE && currentTerrainPoint.x <= Terrain.SIZE*2){System.out.println(currentTerrainPoint.x%Terrain.SIZE);}
+//            if (currentTerrainPoint.x >= Terrain.SIZE*2 && currentTerrainPoint.x <= Terrain.SIZE*3){System.out.println(currentTerrainPoint.x%Terrain.SIZE*2);}
         } else {
             currentTerrainPoint = null;
         }

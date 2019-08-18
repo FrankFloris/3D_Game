@@ -2,54 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b55acb1e-4b7c-4bf1-8a7c-aecc34077992" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Textures.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Tut 7.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/matchingNormalMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/normalMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/waterDUDV.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/water/WaterFrameBuffer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/ShaderProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/ShaderProgram.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/StaticShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/StaticShader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/TerrainShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/TerrainShader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/terrainVertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/terrainVertexShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/Shaders/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/Shaders/vertexShader.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/engineTester/MainGameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/engineTester/MainGameLoop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Light.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Light.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/LightComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/LightComparator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiRenderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiShader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiTexture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/guis/GuiTexture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/models/RawModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/models/RawModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/models/TexturedModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/models/TexturedModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/objConverter/ModelData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/objConverter/ModelData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/objConverter/OBJFileLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/objConverter/OBJFileLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/objConverter/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/objConverter/Vertex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/DisplayManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/DisplayManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/EntityRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/EntityRenderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/Loader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/MasterRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/MasterRenderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/OBJloader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/OBJloader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/TerrainRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/renderEngine/TerrainRenderer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/skybox/DayAndNightHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/skybox/DayAndNightHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/skybox/SkyboxRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/skybox/SkyboxRenderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/skybox/SkyboxShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/skybox/SkyboxShader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/terrains/Terrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/terrains/Terrain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/textures/ModelTexture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/textures/ModelTexture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/textures/TerrainTexture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/textures/TerrainTexture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/textures/TerrainTexturePack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/textures/TerrainTexturePack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/textures/TextureData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/textures/TextureData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Maths.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Maths.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix2f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix2f.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix3f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix3f.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix4f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Matrix4f.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/MousePicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/MousePicker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector2f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector2f.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector3f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector3f.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector4f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/toolbox/Vector4f.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/water/WaterRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/water/WaterRenderer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameEngine/water/WaterShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/water/WaterShader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/water/WaterTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameEngine/water/WaterTile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/water/waterFragment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameEngine/water/waterVertex.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/guis/GuiRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/guis/GuiRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/StaticShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shaders/TerrainShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/TerrainShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shaders/terrainVertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/terrainVertexShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shaders/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/vertexShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skybox/DayAndNightHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skybox/DayAndNightHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skybox/SkyboxRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skybox/SkyboxRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/terrains/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/terrains/Terrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolbox/MousePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolbox/MousePicker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/water/WaterRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/water/WaterRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/water/WaterShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/water/WaterShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/water/WaterTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/water/WaterTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/water/waterFragment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/water/waterFragmentShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/water/waterVertex.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/water/waterVertexShader.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +74,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SnakeGame" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />

@@ -5,8 +5,11 @@ import guis.GuiRenderer;
 import guis.GuiTexture;
 import models.TexturedModel;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL30;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
+import org.lwjgl.util.vector.Vector4f;
 import renderEngine.*;
 import terrains.Terrain;
 import textures.ModelTexture;
@@ -14,6 +17,7 @@ import org.lwjgl.opengl.Display;
 import textures.TerrainTexture;
 import textures.TerrainTexturePack;
 import toolbox.MousePicker;
+import water.WaterFrameBuffer;
 import water.WaterRenderer;
 import water.WaterShader;
 import water.WaterTile;
@@ -26,6 +30,7 @@ public class MainGameLoop {
 
     private final static int MAPWIDTH = 4;
     private final static int MAPDEPTH = 4;
+
 
     public static void main(String[] args){
 
@@ -96,9 +101,9 @@ public class MainGameLoop {
 
 
         List<Light> lights = new ArrayList<Light>();
-        Light sun = new Light(new Vector3f(0,1000,-7000), new Vector3f(0.4f,0.4f,0.4f), new Vector3f(1,0,0));
+        Light sun = new Light(new Vector3f(100, 2220, -50), new Vector3f(1f, 1f, 1f));
         lights.add(sun);
-        Light moon = new Light(new Vector3f(100, 2220, -50), new Vector3f(1f, 1f, 1f));
+        Light moon = new Light(new Vector3f(0,1000,-7000), new Vector3f(0.4f,0.4f,0.4f), new Vector3f(1,0,0));
         lights.add(moon);
 
         List<Entity> entities = new ArrayList<Entity>();
@@ -142,57 +147,11 @@ public class MainGameLoop {
             }
         }
 
-//        for(int i=0;i<400;i++) {
-//            if (i % 7 == 0) {
-//                float x = random.nextFloat() * -800;
-//                float z = random.nextFloat() * -800;
-//                if (i >= 200){
-//                    x += 800;
-//                    z += 800;
-//                }
-//                float y = terrains[(int) (Math.floor(x%800)/800+1)][(int) (Math.floor(z%800)/800+1)].getHeightOfTerrain(x, z);
-////                entities.add(new Entity(grass, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, 1.8f));
-//                x = random.nextFloat() * -800;
-//                z = random.nextFloat() * -800;
-//                if (i >= 200){
-//                    x += 800;
-//                    z += 800;
-//                }
-//                y = terrains[(int) (Math.floor(x%800)/800+1)][(int) (Math.floor(z%800)/800+1)].getHeightOfTerrain(x, z);
-////                entities.add(new Entity(flower, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, 2.3f));
-//            }
-//            if (i % 3 == 0) {
-//                float x = random.nextFloat() * 800 -400;
-//                float z = random.nextFloat() * -800;
-//                float y = terrains[(int) (Math.floor(x%800)/800+1)][(int) (Math.floor(z%800)/800+1)].getHeightOfTerrain(x, z);
-//            entities.add(new Entity(pine, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, random.nextFloat() *1 + 0.5f));
-//                x = random.nextFloat() * 800 -400;
-//                z = random.nextFloat() * -800;
-//                y = terrains[(int) (Math.floor(x%800)/800+1)][(int) (Math.floor(z%800)/800+1)].getHeightOfTerrain(x, z);
-//            entities.add(new Entity(bobble, new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, random.nextFloat() * 0.1f + 0.6f));
-//                x = random.nextFloat() * 800 -400;
-//                z = random.nextFloat() * -800;
-//                y = terrains[(int) (Math.floor(x%800)/800+1)][(int) (Math.floor(z%800)/800+1)].getHeightOfTerrain(x, z);
-//            entities.add(new Entity(fern, random.nextInt(4), new Vector3f(x, y, z), 0, random.nextFloat() * 360, 0, 0.9f)); //random after fern is random fern texture
-//            }
-//            if (i % 25 == 0){
-//                float x = random.nextFloat() * 800 -400;
-//                float z = random.nextFloat() * -800;
-//                float y = terrains[(int) (Math.floor(x%800)/800+1)][(int) (Math.floor(z%800)/800+1)].getHeightOfTerrain(x, z);
-//                entities.add(new Entity(lamp, new Vector3f(x, y, z), 0, 0, 0, 1));
-//                if (i % 50 == 0){
-//                    lights.add(new Light(new Vector3f(x, y+15, z), new Vector3f(2,2,0), new Vector3f(1, 0.01f, 0.002f))); //yellow
-//                } else {
-//                    lights.add(new Light(new Vector3f(x, y + 15, z), new Vector3f(2, 0, 0), new Vector3f(1, 0.01f, 0.002f))); //red
-//                }
-//            }
-//        }
-
         Entity dragon = new Entity(testModel, new Vector3f(0, 0, -150), 3 , 3 , 0f, 1f);
 
         MasterRenderer renderer = new MasterRenderer(loader);
 
-        List<GuiTexture> guis = new ArrayList<GuiTexture>();
+        List<GuiTexture> guiTextures = new ArrayList<GuiTexture>();
         GuiTexture gui = new GuiTexture(loader.loadTexture("socuwan"), new Vector2f(0.5f, 0.5f), new Vector2f(0.25f, 0.25f));
         GuiTexture gui2 = new GuiTexture(loader.loadTexture("Creeper"), new Vector2f(0.3f, 0.3f), new Vector2f(0.2f, 0.2f));
 //        guis.add(gui);
@@ -202,61 +161,89 @@ public class MainGameLoop {
 
         MousePicker picker = new MousePicker(camera, renderer.getProjectionMatrix(), terrains);
 
+        WaterFrameBuffer waterFrameBuffer = new WaterFrameBuffer();
         WaterShader waterShader = new WaterShader();
-        WaterRenderer waterRenderer = new WaterRenderer(loader, waterShader, renderer.getProjectionMatrix());
+        WaterRenderer waterRenderer = new WaterRenderer(loader, waterShader, renderer.getProjectionMatrix(), waterFrameBuffer);
         List<WaterTile> waters = new ArrayList<WaterTile>();
-        waters.add(new WaterTile(75, -75, 0));
+        waters.add(new WaterTile(150, -150, 0));
+        waters.add(new WaterTile(75, -55, 0));
+
+
+//        GuiTexture refraction= new GuiTexture(waterFrameBuffer.getRefractionTexture(), new Vector2f(0.5f, 0.5f), new Vector2f(0.25f, 0.25f));
+//        GuiTexture reflection= new GuiTexture(waterFrameBuffer.getReflectionTexture(), new Vector2f(-0.5f, 0.5f), new Vector2f(0.25f, 0.25f));
+//        guiTextures.add(refraction);
+//        guiTextures.add(reflection);
 
         lights.add(new Light(new Vector3f(100, 20, -50), new Vector3f(2,2,0), new Vector3f(1, 0.01f, 0.002f)));
         lights.sort(new LightComparator(player));
-        for (Light light: lights){
-            System.out.println(light.getPosition());
-        }
+//        for (Light light: lights){
+//            System.out.println(light.getPosition());
+//        }
 
 
         while(!Display.isCloseRequested()){
-//            player.move(terrains[(int) Math.floor((player.getPosition().x % Terrain.SIZE) / Terrain.SIZE + 1)]
-//                    [(int) Math.floor((player.getPosition().z%Terrain.SIZE) / Terrain.SIZE+1)]);
-            int gridX = (int)(player.getPosition().x / Terrain.SIZE+1);
-            int gridZ = (int)(player.getPosition().z / Terrain.SIZE+1);
-
-            if (!(gridX >= MAPWIDTH || player.getPosition().x < -800 || gridZ >= MAPDEPTH || player.getPosition().z < -800)) {
-                player.move(terrains[gridX][gridZ]);
-            } else if(player.getPosition().x < -800 || player.getPosition().z < -800 ) {
-                player.decreasePosition(-1, 0, -1);
-                System.out.println("Don't fall off the world!");
-            } else if(gridX >= MAPWIDTH || gridZ >= MAPDEPTH){
-                player.decreasePosition(1, 0, 1);
-                System.out.println("Don't fall off the world!");
-            }
-
+            player.checkMoves(terrains);
 //            System.out.println(DisplayManager.getFPS());
+//            System.out.println(player.getPosition());
             camera.move();
             picker.update();
+
+            GL11.glEnable(GL30.GL_CLIP_DISTANCE0);
+
+            //TODO make this a keyPressed(KeyEvent e)
             Vector3f terrainPoint = picker.getCurrentTerrainPoint();
-            if (terrainPoint != null && Keyboard.isKeyDown(Keyboard.KEY_LCONTROL)){
-                entities.add(new Entity(pine, terrainPoint, 0, random.nextFloat() * 360, 0, random.nextFloat() *1 + 0.5f));
-//                dragon.setPosition(terrainPoint);
-//                sun.setPosition(terrainPoint);
+
+            while (Keyboard.next() && terrainPoint != null){
+                float y = MousePicker.getTerrainPointY(terrainPoint.x, terrainPoint.z, terrains[0][0]);
+                if (Keyboard.getEventKey() == Keyboard.KEY_LCONTROL) {
+                    if (Keyboard.getEventKeyState()) {
+                        entities.add(new Entity(pine, new Vector3f(terrainPoint.x, y, terrainPoint.z), 0, random.nextFloat() * 360, 0, random.nextFloat() *1 + 0.5f));
+                    }
+                }
+//                if (Keyboard.getEventKey() == Keyboard.KEY_LSHIFT) {
+//                    if (Keyboard.getEventKeyState()) {
+//                        picker.moveEntity(new Vector3f(terrainPoint.x, y, terrainPoint.z), entities);
+//                    }
+//                }
+                if (Keyboard.getEventKey() == Keyboard.KEY_Z) {
+                    if (Keyboard.getEventKeyState()) {
+                        waters.add(new WaterTile(terrainPoint.x, terrainPoint.z, 0));
+                    }
+                }
             }
 
-            //TODO entities. add doe hier iets mee
-//            new Vector3f(x+Terrain.SIZE*i, y, z+Terrain.SIZE*j)
-
-
-            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                picker.moveEntity(picker.getCurrentTerrainPoint(), entities);
+//
+//            //TODO precisie weghalen en terugplaatsen verhogen!
+            if (terrainPoint != null && Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                float y = MousePicker.getTerrainPointY(terrainPoint.x, terrainPoint.z, terrains[0][0]);
+                picker.moveEntity(new Vector3f(terrainPoint.x, y, terrainPoint.z), entities);
             }
             renderer.processEntity(dragon);
             dragon.increaseRotation(0,0.25f, 0);
 
             lights.sort(new LightComparator(player));
-            renderer.renderScene(entities, terrains, lights, camera, player);
-            waterRenderer.render(waters, camera);
-            guiRenderer.render(guis); //wordt nu nog niet gebruikt
+
+            waterFrameBuffer.bindReflectionFrameBuffer();
+            float distance = 2 * (camera.getPosition().y - waters.get(0).getHeight());
+            camera.getPosition().y -= distance;
+            camera.invertPitch();
+            renderer.renderScene(entities, terrains, lights, camera, player, new Vector4f(0, 1, 0, -waters.get(0).getHeight()+0.25f));
+            camera.getPosition().y += distance;
+            camera.invertPitch();
+
+            waterFrameBuffer.bindRefractionFrameBuffer();
+            renderer.renderScene(entities, terrains, lights, camera, player, new Vector4f(0, -1, 0, waters.get(0).getHeight()));
+
+            GL11.glDisable(GL30.GL_CLIP_DISTANCE0);
+            waterFrameBuffer.unbindCurrentFrameBuffer();
+            renderer.renderScene(entities, terrains, lights, camera, player, new Vector4f(0, 1, 0, 100000)); //change w: to height of clipping
+            waterRenderer.render(waters, camera, sun);
+            guiRenderer.render(guiTextures); //wordt nu nog niet gebruikt
             DisplayManager.updateDisplay();
+//            System.out.println((player.getPosition().x % 800));
         }
 
+        waterFrameBuffer.cleanUp();
         waterShader.cleanUp();
         guiRenderer.cleanUp();
         renderer.cleanUp();
@@ -271,5 +258,4 @@ public class MainGameLoop {
     public static int getMAPDEPTH() {
         return MAPDEPTH;
     }
-
 }

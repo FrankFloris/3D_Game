@@ -91,7 +91,7 @@ public class Terrain {
         int VERTEX_COUNT = image.getHeight();
         heights = new float[VERTEX_COUNT][VERTEX_COUNT];
 
-        int count = VERTEX_COUNT * VERTEX_COUNT;
+        int count = VERTEX_COUNT * VERTEX_COUNT*4; //remove *4 als de hoogteverschillen te groot zijn
         float[] vertices = new float[count * 3];
         float[] normals = new float[count * 3];
         float[] textureCoords = new float[count*2];

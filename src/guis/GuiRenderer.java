@@ -9,6 +9,10 @@ import org.lwjgl.util.vector.Matrix4f;
 import renderEngine.Loader;
 import toolbox.Maths;
 
+import javax.swing.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.security.Key;
 import java.util.List;
 
 public class GuiRenderer {

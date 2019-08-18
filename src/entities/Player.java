@@ -1,5 +1,6 @@
 package entities;
 
+import com.sun.tools.javac.Main;
 import engineTester.MainGameLoop;
 import models.TexturedModel;
 import org.lwjgl.input.Keyboard;
@@ -9,7 +10,7 @@ import terrains.Terrain;
 
 public class Player extends Entity {
 
-    private static final float RUN_SPEED = 520;
+    private static final float RUN_SPEED = 120;
     private static final float TURN_SPEED = 120;
     private static final float GRAVITY = -50;
     private static final float JUMP_POWER = 30;
@@ -79,5 +80,20 @@ public class Player extends Entity {
             jump();
         }
 
+    }
+
+    public void checkMoves(Terrain[][] terrains) {
+        int gridX = (int)(this.getPosition().x / Terrain.SIZE+1);
+        int gridZ = (int)(this.getPosition().z / Terrain.SIZE+1);
+
+        if (!(gridX >= MainGameLoop.getMAPWIDTH() || this.getPosition().x < -800 || gridZ >= MainGameLoop.getMAPDEPTH() || this.getPosition().z < -800)) {
+            this.move(terrains[gridX][gridZ]);
+        } else if(this.getPosition().x < -800 || this.getPosition().z < -800 ) {
+            this.decreasePosition(-1, 0, -1);
+            System.out.println("Don't fall off the world!");
+        } else if(gridX >= MainGameLoop.getMAPWIDTH() || gridZ >= MainGameLoop.getMAPDEPTH()){
+            this.decreasePosition(1, 0, 1);
+            System.out.println("Don't fall off the world!");
+        }
     }
 }

@@ -53,7 +53,8 @@ public class Camera {
         float offsetZ = (float) (horizontalDistance * Math.cos(Math.toRadians(theta)));
         position.x = player.getPosition().x - offsetX;
         position.z = player.getPosition().z - offsetZ;
-        position.y = player.getPosition().y + verticalDistance;
+        position.y = player.getPosition().y + verticalDistance + 4; //TODO hier verder aan werken
+//        System.out.println(verticalDistance);
 
     }
 
@@ -86,6 +87,10 @@ public class Camera {
             }
             angleAroundPlayer -= anglechange;
         }
+    }
+
+    public void invertPitch() {
+        this.pitch = -pitch;
     }
 
 //    private void calculateAngleAroundPlayer(){

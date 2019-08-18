@@ -5,19 +5,21 @@ import renderEngine.DisplayManager;
 public class DayAndNightHandler {
 
     private static float timeInMillis = 0;
+    private static final int CYCLE_LENGTH = 8;
 
     public DayAndNightHandler(){
 
     }
 
+
     public static String calculateTimeOfDay(){
         timeInMillis += DisplayManager.getFrameTimeSeconds() * 1000;
-        timeInMillis %= 48000;
-        if(timeInMillis >= 0 && timeInMillis < 10000){
+        timeInMillis %= 480000;
+        if(timeInMillis >= 0 && timeInMillis < 100000){
             return "nightTime";
-        }else if(timeInMillis >= 10000 && timeInMillis < 16000){
+        }else if(timeInMillis >= 100000 && timeInMillis < 160000){
             return ("morning");
-        }else if(timeInMillis >= 16000 && timeInMillis < 42000){
+        }else if(timeInMillis >= 160000 && timeInMillis < 420000){
             return ("dayTime");
         }else{
             return ("evening");
@@ -27,15 +29,14 @@ public class DayAndNightHandler {
     public static float calculateBlendFactor(String timeOfDay){
         switch (timeOfDay) {
             case "nightTime":
-                return (timeInMillis - 0) / (10000);
+                return (timeInMillis - 0) / (100000) + 0.0000001f;
             case "morning":
-                return (timeInMillis - 10000) / (16000 - 10000);
+                return (timeInMillis - 100000) / (160000 - 100000) + 0.0000001f;
             case "dayTime":
-                return (timeInMillis - 16000) / (42000 - 16000);
+                return (timeInMillis - 160000) / (420000 - 160000) + 0.0000001f;
             default:
-                return (timeInMillis - 42000) / (48000 - 42000);
+                return (timeInMillis - 420000) / (480000 - 420000) + 0.0000001f;
         }
-
     }
 
     public static float calculateColour(String timeOfDay, String Colour){
@@ -86,6 +87,5 @@ public class DayAndNightHandler {
                 }
         }
     }
-
 
 }
