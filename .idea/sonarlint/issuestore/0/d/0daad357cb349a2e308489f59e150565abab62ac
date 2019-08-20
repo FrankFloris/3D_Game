@@ -1,0 +1,14 @@
+
+|squid:S00116"_Rename this field "location_modelMatrix" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ­üÿÿÿÿ
+‚squid:S00116"eRename this field "location_refractionTexture" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÂŞÈùÿÿÿÿ
+~squid:S00116"aRename this field "location_lightPosition" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÆ–ÿÿÿÿÿ
+tsquid:S00116"\Rename this field "location_depthMap" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïØ¼Á
+usquid:S00116"]Rename this field "location_normalMap" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÕ­¤
+Qsquid:S1191O"5Use classes from the Java API instead of Sun classes.(ë…Î’ûÿÿÿÿ
+zsquid:S00116"bRename this field "location_cameraPosition" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–™èÇ
+{squid:S00116"^Rename this field "location_viewMatrix" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ—Éşÿÿÿÿÿ
+squid:S00116"dRename this field "location_projectionMatrix" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êò¾¤úÿÿÿÿ
+|squid:S00116"_Rename this field "location_lightColour" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃñÌñüÿÿÿÿ
+xsquid:S00116"[Rename this field "location_dudvMap" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼Ü¤Áüÿÿÿÿ
+vsquid:S00116"^Rename this field "location_moveFactor" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•ô³Ã
+|squid:S00116"eRename this field "location_reflectionTexture" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€Ê™{

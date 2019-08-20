@@ -8,8 +8,8 @@ import entities.Camera;
 
 public class WaterShader extends ShaderProgram {
 
-    private final static String VERTEX_FILE = "src/water/waterVertexShader.txt";
-    private final static String FRAGMENT_FILE = "src/water/waterFragmentShader.txt";
+    private static final String VERTEX_FILE = "src/water/waterVertexShader.txt";
+    private static final String FRAGMENT_FILE = "src/water/waterFragmentShader.txt";
 
     private int location_modelMatrix;
     private int location_viewMatrix;
@@ -49,21 +49,21 @@ public class WaterShader extends ShaderProgram {
         location_depthMap = getUniformLocation("depthMap");
     }
 
-    public void loadProjectionMatrix(Matrix4f projection) {
+    void loadProjectionMatrix(Matrix4f projection) {
         loadMatrix(location_projectionMatrix, projection);
     }
 
-    public void loadViewMatrix(Camera camera){
+    void loadViewMatrix(Camera camera){
         Matrix4f viewMatrix = Maths.createViewMatrix(camera);
         loadMatrix(location_viewMatrix, viewMatrix);
         super.loadVector(location_cameraPosition, camera.getPosition());
     }
 
-    public void loadModelMatrix(Matrix4f modelMatrix){
+    void loadModelMatrix(Matrix4f modelMatrix){
         loadMatrix(location_modelMatrix, modelMatrix);
     }
 
-    public void connectTextureUnits(){
+    void connectTextureUnits(){
         super.loadInt(location_reflectionTexture, 0);
         super.loadInt(location_refractionTexture, 1);
         super.loadInt(location_dudvMap, 2);
@@ -71,11 +71,11 @@ public class WaterShader extends ShaderProgram {
         super.loadInt(location_depthMap, 4);
     }
 
-    public void loadMoveFactor(float moveFactor){
+    void loadMoveFactor(float moveFactor){
         super.loadFloat(location_moveFactor, moveFactor);
     }
 
-    public void loadLight(Light sun){
+    void loadLight(Light sun){
         super.loadVector(location_lightColour, sun.getColour());
         super.loadVector(location_lightPosition, sun.getPosition());
     }

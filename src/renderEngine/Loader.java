@@ -17,14 +17,17 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static org.newdawn.slick.opengl.PNGDecoder.RGBA;
 
 public class Loader {
 
-    private List<Integer> vaos = new ArrayList<Integer>();
-    private List<Integer> vbos = new ArrayList<Integer>();
-    private List<Integer> textures = new ArrayList<Integer>();
+    private static final Logger LOGGER = Logger.getLogger( Loader.class.getName() );
+    private List<Integer> vaos = new ArrayList<>();
+    private List<Integer> vbos = new ArrayList<>();
+    private List<Integer> textures = new ArrayList<>();
 
     public RawModel loadToVAO(float[] positions, float[] textureCoords, float[] normals, int[] indices){
         int vaoID = createVAO();
@@ -53,10 +56,11 @@ public class Loader {
             //change param to lower number for sharper background and less fps//
             GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL14.GL_TEXTURE_LOD_BIAS, -0.5f);
         } catch (FileNotFoundException e){
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, e.toString(), e);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, e.toString(), e);
         }
+        assert texture != null;
         int textureID = texture.getTextureID();
         textures.add(textureID);
         return textureID;
@@ -106,8 +110,8 @@ public class Loader {
             buffer.flip();
             in.close();
         } catch (Exception e){
-            e.printStackTrace();
-            System.err.println("Tried to load texture " + fileName + ", didn't work");
+            LOGGER.log(Level.SEVERE, e.toString(), e);
+//            System.err.println("Tried to load texture " + fileName + ", didn't work");
             System.exit(-1);
         }
         return new TextureData(width, height, buffer);

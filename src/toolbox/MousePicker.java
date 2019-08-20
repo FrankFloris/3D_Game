@@ -2,7 +2,6 @@ package toolbox;
 
 import engineTester.MainGameLoop;
 import entities.Entity;
-import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Matrix4f;
@@ -10,11 +9,9 @@ import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
 
-import renderEngine.DisplayManager;
 import terrains.Terrain;
 import entities.Camera;
 
-import java.security.Key;
 import java.util.List;
 
 public class MousePicker {
@@ -67,12 +64,6 @@ public class MousePicker {
             assert currentTerrainPoint != null;
             currentTerrainPoint.y = terrains[(int) Math.floor((currentTerrainPoint.x % Terrain.SIZE) / Terrain.SIZE + 1)]
                     [(int) Math.floor((currentTerrainPoint.z%Terrain.SIZE) / Terrain.SIZE+1)].getHeightOfTerrain(currentTerrainPoint.x, currentTerrainPoint.z);
-//            System.out.println((int) Math.floor((currentTerrainPoint.x % Terrain.SIZE)/800+1));
-//            System.out.println(currentTerrainPoint.x);
-////            if (currentTerrainPoint.x >= 800 && currentTerrainPoint.x <=1600){System.out.println(currentTerrainPoint.x-800);}
-////            if (currentTerrainPoint.x >= 800 && currentTerrainPoint.x <=1600){System.out.println(currentTerrainPoint.x%800);}
-//            if (currentTerrainPoint.x >= Terrain.SIZE && currentTerrainPoint.x <= Terrain.SIZE*2){System.out.println(currentTerrainPoint.x%Terrain.SIZE);}
-//            if (currentTerrainPoint.x >= Terrain.SIZE*2 && currentTerrainPoint.x <= Terrain.SIZE*3){System.out.println(currentTerrainPoint.x%Terrain.SIZE*2);}
         } else {
             currentTerrainPoint = null;
         }

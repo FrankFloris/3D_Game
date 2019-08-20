@@ -3,10 +3,8 @@ package renderEngine;
 import engineTester.MainGameLoop;
 import entities.*;
 import models.TexturedModel;
-import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.Color;
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector4f;
 import shaders.StaticShader;
@@ -15,8 +13,6 @@ import skybox.DayAndNightHandler;
 import skybox.SkyboxRenderer;
 import terrains.Terrain;
 
-import java.awt.image.BufferedImage;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +25,7 @@ public class MasterRenderer {
     private static final float FAR_PLANE = 1000;
 
     //RGB no longer final or static
-    private float RED = DayAndNightHandler.calculateColour(DayAndNightHandler.calculateTimeOfDay(),"RED");   //0.23f;
+    private float RED = DayAndNightHandler.calculateColour(DayAndNightHandler.calculateTimeOfDay(),"RED");
     private float GREEN = DayAndNightHandler.calculateColour(DayAndNightHandler.calculateTimeOfDay(),"GREEN");
     private float BLUE = DayAndNightHandler.calculateColour(DayAndNightHandler.calculateTimeOfDay(), "BLUE");
 
@@ -58,16 +54,16 @@ public class MasterRenderer {
         return projectionMatrix;
     }
 
-    public static void enableCulling(){
+    static void enableCulling(){
         GL11.glEnable(GL11.GL_CULL_FACE);
         GL11.glCullFace(GL11.GL_BACK);
     }
 
-    public static void disableCulling(){
+    static void disableCulling(){
         GL11.glDisable(GL11.GL_CULL_FACE);
     }
 
-    public void prepare(){
+    private void prepare(){
         GL11.glEnable(GL11.GL_DEPTH_TEST);
         GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
         GL11.glClearColor(RED, GREEN, BLUE,1);
@@ -88,7 +84,7 @@ public class MasterRenderer {
         projectionMatrix.m33 = 0;
     }
 
-    public void render(List<Light> lights, Camera camera, Vector4f clipPlane){
+    private void render(List<Light> lights, Camera camera, Vector4f clipPlane){
         prepare();
         shader.start();
         shader.loadClipPlane(clipPlane);
@@ -109,7 +105,7 @@ public class MasterRenderer {
         entities.clear();
     }
 
-    public void processTerrain(Terrain terrain){
+    private void processTerrain(Terrain terrain){
         terrains.add(terrain);
     }
 
@@ -119,7 +115,7 @@ public class MasterRenderer {
         if (batch != null){
             batch.add(entity);
         } else{
-            List<Entity> newBatch = new ArrayList<Entity>();
+            List<Entity> newBatch = new ArrayList<>();
             newBatch.add(entity);
             entities.put(entityModel, newBatch);
         }
@@ -128,9 +124,7 @@ public class MasterRenderer {
 
     public void renderScene(List<Entity> entities, Terrain[][] terrains, List<Light> lights,
                             Camera camera, Player player, Vector4f clipPlane){
-        for (Entity entity: entities){
-            processEntity(entity);
-        }
+        entities.forEach(this::processEntity);
         for (int i = 0; i < MainGameLoop.getMAPWIDTH(); i++) {
             for (int j = 0; j <MainGameLoop.getMAPDEPTH(); j++) {
                 processTerrain(terrains[i][j]);
@@ -138,7 +132,6 @@ public class MasterRenderer {
         }
         lights.sort(new LightComparator(player));
         render(lights, camera, clipPlane);
-//        System.out.println(lights.get(3).getPosition());
         processEntity(player);
     }
 

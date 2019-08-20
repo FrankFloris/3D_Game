@@ -2,10 +2,11 @@ package water;
 
 public class WaterTile {
 
-    public static final float TILE_SIZE = 15;
+    public static final float TILE_SIZE = 100;
 
     private float height;
-    private float x,z;
+    private float x;
+    private float z;
 
     public WaterTile(float centerX, float centerZ, float height){
         this.x = centerX;

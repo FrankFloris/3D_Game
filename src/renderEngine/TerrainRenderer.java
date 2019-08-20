@@ -1,8 +1,6 @@
 package renderEngine;
 
-import entities.Entity;
 import models.RawModel;
-import models.TexturedModel;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GL20;
@@ -11,8 +9,6 @@ import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector3f;
 import shaders.TerrainShader;
 import terrains.Terrain;
-import textures.ModelTexture;
-import textures.TerrainTexture;
 import textures.TerrainTexturePack;
 import toolbox.Maths;
 
@@ -30,7 +26,7 @@ public class TerrainRenderer {
         shader.stop();
     }
 
-    public void render (List<Terrain> terrains){
+    void render(List<Terrain> terrains){
         for (Terrain terrain: terrains){
             prepareTerrain(terrain);
             loadModelMatrix(terrain);

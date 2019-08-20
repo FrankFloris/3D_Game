@@ -1,6 +1,5 @@
 package entities;
 
-import com.sun.tools.javac.Main;
 import engineTester.MainGameLoop;
 import models.TexturedModel;
 import org.lwjgl.input.Keyboard;
@@ -8,14 +7,16 @@ import org.lwjgl.util.vector.Vector3f;
 import renderEngine.DisplayManager;
 import terrains.Terrain;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Player extends Entity {
 
+    private static final Logger LOGGER = Logger.getLogger( Player.class.getName() );
     private static final float RUN_SPEED = 120;
     private static final float TURN_SPEED = 120;
     private static final float GRAVITY = -50;
     private static final float JUMP_POWER = 30;
-
-//    private static final float TERRAIN_HEIGHT = 0;
 
     private float currentSpeed = 0;
     private float currentTurnSpeed = 0;
@@ -34,7 +35,7 @@ public class Player extends Entity {
         }
     }
 
-    public void move(Terrain terrain){
+    private void move(Terrain terrain){
         checkInputs();
         super.increaseRotation(0, currentTurnSpeed * DisplayManager.getFrameTimeSeconds(), 0);
         float distance = currentSpeed * DisplayManager.getFrameTimeSeconds();
@@ -53,7 +54,7 @@ public class Player extends Entity {
                 super.getPosition().y = terrainHeight;
             }
         } catch (Exception e) {
-            System.out.println("Mustn't fall off the world!");
+            LOGGER.log(Level.SEVERE, e.toString(), e);
             upwardsSpeed = 0;
         }
     }
@@ -89,11 +90,9 @@ public class Player extends Entity {
         if (!(gridX >= MainGameLoop.getMAPWIDTH() || this.getPosition().x < -800 || gridZ >= MainGameLoop.getMAPDEPTH() || this.getPosition().z < -800)) {
             this.move(terrains[gridX][gridZ]);
         } else if(this.getPosition().x < -800 || this.getPosition().z < -800 ) {
-            this.decreasePosition(-1, 0, -1);
-            System.out.println("Don't fall off the world!");
+            this.decreasePosition(-1, -1);
         } else if(gridX >= MainGameLoop.getMAPWIDTH() || gridZ >= MainGameLoop.getMAPDEPTH()){
-            this.decreasePosition(1, 0, 1);
-            System.out.println("Don't fall off the world!");
+            this.decreasePosition(1, 1);
         }
     }
 }

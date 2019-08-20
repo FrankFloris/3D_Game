@@ -1,0 +1,10 @@
+
+T
+squid:S106t"9Replace this use of System.out or System.err by a logger.(åêüÿÿÿÿ
+O
+squid:S106l"9Replace this use of System.out or System.err by a logger.(ğ¢¼
+?squid:S1148m"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+O
+squid:S106u"9Replace this use of System.out or System.err by a logger.(Ä µô
+hsquid:S2095f"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(õéµ¨ûÿÿÿÿ
+`squid:CallToDeprecatedMethods"3Remove this use of "glGetShader"; it is deprecated.(¥ü¶ÿÿÿÿÿ

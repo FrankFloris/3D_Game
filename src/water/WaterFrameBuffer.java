@@ -4,25 +4,16 @@ import java.nio.ByteBuffer;
 
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GL14;
-import org.lwjgl.opengl.GL15;
-import org.lwjgl.opengl.GL20;
-import org.lwjgl.opengl.GL21;
 import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GL31;
 import org.lwjgl.opengl.GL32;
-import org.lwjgl.opengl.GL33;
-import org.lwjgl.opengl.GL40;
-import org.lwjgl.opengl.GL42;
 
 public class WaterFrameBuffer {
 
-    protected static final int REFLECTION_WIDTH = 320;
+    private static final int REFLECTION_WIDTH = 320;
     private static final int REFLECTION_HEIGHT = 180;
 
-    protected static final int REFRACTION_WIDTH = 1280;
+    private static final int REFRACTION_WIDTH = 1280;
     private static final int REFRACTION_HEIGHT = 720;
 
     private int reflectionFrameBuffer;
@@ -60,15 +51,15 @@ public class WaterFrameBuffer {
         GL11.glViewport(0, 0, Display.getWidth(), Display.getHeight());
     }
 
-    public int getReflectionTexture() {//get the resulting texture
+    int getReflectionTexture() {//get the resulting texture
         return reflectionTexture;
     }
 
-    public int getRefractionTexture() {//get the resulting texture
+    int getRefractionTexture() {//get the resulting texture
         return refractionTexture;
     }
 
-    public int getRefractionDepthTexture(){//get the resulting depth texture
+    int getRefractionDepthTexture(){//get the resulting depth texture
         return refractionDepthTexture;
     }
 

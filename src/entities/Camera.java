@@ -1,6 +1,5 @@
 package entities;
 
-import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.util.vector.Vector3f;
 
@@ -24,7 +23,6 @@ public class Camera {
     public void move(){
         calculateZoom();
         calculatePitchAndAngle();
-//        calculateAngleAroundPlayer();
         float horizontalDistance = calculateHorizontalDistance();
         float verticalDistance = calculateVerticalDistance();
         calculateCameraPosition(horizontalDistance, verticalDistance);
@@ -54,8 +52,6 @@ public class Camera {
         position.x = player.getPosition().x - offsetX;
         position.z = player.getPosition().z - offsetZ;
         position.y = player.getPosition().y + verticalDistance + 4; //TODO hier verder aan werken
-//        System.out.println(verticalDistance);
-
     }
 
     private float calculateHorizontalDistance(){
@@ -92,11 +88,4 @@ public class Camera {
     public void invertPitch() {
         this.pitch = -pitch;
     }
-
-//    private void calculateAngleAroundPlayer(){
-//        if (Mouse.isButtonDown(0)){
-//            float angleChange = Mouse.getDX() * 0.3f;
-//            angleAroundPlayer -= angleChange;
-//        }
-//    }
 }

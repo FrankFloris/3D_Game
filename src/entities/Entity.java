@@ -1,15 +1,15 @@
 package entities;
 
-import engineTester.MainGameLoop;
 import models.TexturedModel;
 import org.lwjgl.util.vector.Vector3f;
-import terrains.Terrain;
 
 public class Entity {
 
     private TexturedModel model;
     private Vector3f position;
-    private float rotX, rotY, rotZ;
+    private float rotX;
+    private float rotY;
+    private float rotZ;
     private float scale;
 
     private int textureIndex;
@@ -44,9 +44,8 @@ public class Entity {
         this.position.z += dz;
     }
 
-    public void decreasePosition(float dx, float dy, float dz) {
+    void decreasePosition(float dx, float dz) {
         this.position.x -= dx;
-        this.position.y -= dy;
         this.position.z -= dz;
     }
 
